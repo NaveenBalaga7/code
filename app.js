@@ -50,7 +50,7 @@ const authentication = (request, response, next) => {
   }
 
   if (jwtToken) {
-    jwt.Verify(jwtToken, "SECRET_KEY", (error, payload) => {
+    jwt.verify(jwtToken, "SECRET_KEY", (error, payload) => {
       if (error) {
         response.status(401);
         response.send("Invalid JWT Token");
